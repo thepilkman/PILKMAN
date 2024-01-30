@@ -1,12 +1,19 @@
-import kaboom from "kaboom"
+import k from "./kaboomContext.js"
+import world from "./scenes/world.js";
 
-const k = kaboom()
+k.loadSprite("assets", "./maps/Tiles.png", {
+	sliceX: 12,
+	sliceY: 8,
+});
 
-k.loadSprite("bean", "sprites/bean.png")
+const scenes = {
+	world: () => {},
+};
 
-k.add([
-	k.pos(120, 80),
-	k.sprite("bean"),
-])
+for (const sceneName in scenes){
+	k.scene(sceneName, () => scenes[sceneName](k));
+}
 
-k.onClick(() => k.addKaboom(k.mousePos()))
+k.scene("world", () => world(k));
+k.go("world");
+k.loop();
