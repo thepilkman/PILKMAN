@@ -1,12 +1,11 @@
 const english = {
-  title: "PILKMAN",
-  languageIndication: "",
-  playIndication: "Press Enter to start the game",
+    title: "PILKMAN",
+    languageIndication: "",
+    playIndication: "Press Enter to start the game",
 };
 
-
 const menuText = {
-  english,
+    english,
 };
 
 export default menuText;
