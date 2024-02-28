@@ -1,5 +1,6 @@
 import k from "./kaboomContext.js";
 import mainMenu from "./scenes/mainMenu.js";
+import deathText from "./content/deathText.js";
 import world from "./scenes/world.js";
 import house from "./scenes/house.js";
 import dungeon from "./scenes/dungeon.js";
@@ -69,9 +70,11 @@ const scenes = {
     house,
     dungeon,
     mainMenu,
+    deathText,
 };
 for (const sceneName in scenes) {
     k.scene(sceneName, () => scenes[sceneName](k));
 }
 
 k.go("mainMenu");
+

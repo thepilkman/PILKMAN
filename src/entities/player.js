@@ -25,6 +25,7 @@ export function watchPlayerHealth(k) {
     k.onUpdate(() => {
         if (playerState.getHealth() <= 0) {
             playerState.setHealth(playerState.getMaxHealth());
+            k.go("deathText");
             k.go("world");
         }
     });
