@@ -2,6 +2,7 @@ import menuText from "../content/menuText.js";
 import { gameState } from "../state/stateManagers.js";
 import { colorizeBackground } from "../utils.js";
 
+
 export default function mainMenu(k) {
     const locales = ["english"];
 
@@ -47,5 +48,7 @@ export default function mainMenu(k) {
         k.go("world");
     });
 
-    k.loadMusic("music", "/src/scenes/track1.mp3");
+    k.loadSound("music", "./src/scenes/track1.mp3");
+
 }
+
